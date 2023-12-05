@@ -1,7 +1,7 @@
 const NewPost = () => {
     return (
         <main>
-            <h1>Header</h1>
+            <h1>New Post</h1>
         </main>
     )
 }
