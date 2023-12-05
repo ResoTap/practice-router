@@ -7,12 +7,19 @@ import PostPage from './postPage';
 import About from './about';
 import Missing from './missing';
 import { Route, Switch, useHistory } from 'react-router-dom';
-import { useState, useEffect } from './react';
+import { useState, useEffect } from 'react';
 
 function App() {
   return (
     <div className="App">
-
+      <Header />
+      <Nav />
+      <Home />
+      <NewPost />
+      <PostPage />
+      <About />
+      <Missing />
+      <Footer />
     </div>
   );
 }
