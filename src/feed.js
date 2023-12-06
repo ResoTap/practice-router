@@ -1,3 +1,5 @@
+import Post from "./post"
+
 const Feed = ({ posts }) => {
     return (
         <>
