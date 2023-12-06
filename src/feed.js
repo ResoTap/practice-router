@@ -1,8 +1,10 @@
-const Feed = () => {
+const Feed = ({ posts }) => {
     return (
-        <div>
-
-        </div>
+        <>
+            {posts.map(post => (
+                <Post key={post.id} pos={post} />
+            ))}
+        </>
     )
 }
 
