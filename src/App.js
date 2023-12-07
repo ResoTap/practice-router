@@ -8,6 +8,7 @@ import About from './about';
 import Missing from './missing';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { format } from 'date-fns';
 
 function App() {
   const [posts, setPosts] = useState([
@@ -45,7 +46,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
-    const datetime = '';
+    const datetime = format(new Date(), 'MMMM dd, yyyy pp');
   }
 
   const handleDelete = (id) => {
