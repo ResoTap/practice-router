@@ -20,8 +20,8 @@ const NewPost = ({
                     required
                     value={postBody}
                     onChange={(e) => setPostBody(e.target.value)} 
-                    // cols="30" 
-                    // rows="10"
+                    cols="30" 
+                    rows="10"
                 />
                 <button type="submit">Submit</button>
             </form>

@@ -42,8 +42,10 @@ function App() {
   const [postBody, setPostBody] = useState('');
   const history = useNavigate();
 
-  const handleSubmit = () => {
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
+    const datetime = '';
   }
 
   const handleDelete = (id) => {
