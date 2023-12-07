@@ -44,6 +44,14 @@ function App() {
   const [postBody, setPostBody] = useState('');
   const history = useNavigate();
 
+  useEffect(() => {
+    const filteredResults = posts.filter(post => 
+      ((post.body).toLowerCase()).includes(search.toLowerCase())
+      || ((post.title).toLowerCase()).includes(search.toLowerCase()));
+
+      setSearchResults(filteredResults.reverse());
+  },[posts, search]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
@@ -61,7 +69,7 @@ function App() {
     setPosts(postsList);
     history('/')
   }
-  
+
   return (
     <div className="App">
       <Header title="React JS Blog" />
