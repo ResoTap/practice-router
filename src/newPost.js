@@ -11,7 +11,7 @@ const NewPost = ({
                     id="postTitle"
                     required
                     value={postTitle}
-                    onChange={(e) => setPostTitle=(e.target.value)}
+                    onChange={(e) => setPostTitle(e.target.value)}
                 />
                 <label htmlFor="postBody">Post:</label>
                 <textarea 
@@ -20,9 +20,10 @@ const NewPost = ({
                     required
                     value={postBody}
                     onChange={(e) => setPostBody(e.target.value)} 
-                    cols="30" 
-                    rows="10"
-                ></textarea>
+                    // cols="30" 
+                    // rows="10"
+                />
+                <button type="submit">Submit</button>
             </form>
         </main>
     )
