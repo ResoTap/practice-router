@@ -37,6 +37,7 @@ function App() {
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequatur expedita, assumenda similique non optio! Modi nesciunt excepturi corrupti atque blanditiis quo nobis, non optio quae possimus illum exercitationem ipsa!"
     }
   ])
+
   const [search, setSearch] = useState('');
   const [searchResults, setSearchresults] = useState([]);
   const [postTitle, setPostTitle] = useState('');
@@ -47,6 +48,12 @@ function App() {
     e.preventDefault();
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
     const datetime = format(new Date(), 'MMMM dd, yyyy pp');
+    const newPost = { id, title: postTitle, datetime, body: postBody };
+    const allPosts = [ ...posts, newPost ];
+    setPosts(allPosts);
+    setPostTitle('');
+    setPostBody('');
+    history('/');
   }
 
   const handleDelete = (id) => {
@@ -54,6 +61,7 @@ function App() {
     setPosts(postsList);
     history('/')
   }
+  
   return (
     <div className="App">
       <Header title="React JS Blog" />
