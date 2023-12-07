@@ -39,7 +39,7 @@ function App() {
   ])
 
   const [search, setSearch] = useState('');
-  const [searchResults, setSearchresults] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
   const [postTitle, setPostTitle] = useState('');
   const [postBody, setPostBody] = useState('');
   const history = useNavigate();
@@ -75,7 +75,7 @@ function App() {
       <Header title="React JS Blog" />
       <Nav search={search} setSearch={setSearch} />
       <Routes>
-        <Route path='/' element={<Home posts={posts} />} />
+        <Route path='/' element={<Home posts={searchResults} />} />
         <Route path='/post' element={<NewPost
             handleSubmit={handleSubmit}
             postTitle={postTitle}
