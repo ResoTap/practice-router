@@ -52,9 +52,8 @@ function App() {
     const datetime = format(new Date(), 'MMMM dd, yyyy pp');
     const newPost = { id, title: postTitle, datetime, body: postBody };
     console.log(newPost);
-    const response = await api.post('/post', newPost);
     try {
-      // const response = await api.post('/post', newPost);
+      const response = await api.post('/post', newPost);
       console.log(response);
       const allPosts = [...posts, response.data];
       setPosts(allPosts);
@@ -63,6 +62,9 @@ function App() {
       history('/');
     } catch(err) {
       console.log(`Error: ${err.message}`);
+      console.log(err.response.data);
+      console.log(err.response.status);
+      console.log(err.response.headers);
     }
   }
 
