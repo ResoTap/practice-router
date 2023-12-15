@@ -67,7 +67,19 @@ function App() {
     }
   }
 
-  const handleEdit = async 
+  const handleEdit = async (id) => {
+    const datetime = format(new Date(), 'MMMM dd, yyyy pp');
+    const updatedPost = { id, title: editTitle, datetime, body: editBody };
+    try {
+      const response = await api.put(`/posts/${id}`, updatedPost);
+      setPosts(posts.map(post => post.id === id ? { ...response.data } : post));
+      setEditTitle('');
+      setEditBody('');
+      history('/');
+    } catch (err) {
+      console.log(`Error: ${err.message}`);
+    }
+  }
 
   const handleDelete = async (id) => {
     try {
