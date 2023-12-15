@@ -8,27 +8,27 @@ const EditPost = ({
         <main className="NewPost">
             {editTitle && 
                 <>
-                    <h2>New Post</h2>
-                    <form className="newPostForm" onSubmit={handleSubmit}>
+                    <h2>Edit Post</h2>
+                    <form className="newPostForm" onSubmit={(e) => e.preventDefault()}>
                         <label htmlFor="postTitle">Title:</label>
                         <input 
                             type="text" 
                             id="postTitle"
                             required
-                            value={postTitle}
-                            onChange={(e) => setPostTitle(e.target.value)}
+                            value={editTitle}
+                            onChange={(e) => setEditTitle(e.target.value)}
                         />
                         <label htmlFor="postBody">Post:</label>
                         <textarea 
                             name="postBody" 
                             id="postBody"
                             required
-                            value={postBody}
-                            onChange={(e) => setPostBody(e.target.value)} 
+                            value={editBody}
+                            onChange={(e) => setEditBody(e.target.value)} 
                             cols="30" 
                             rows="10"
                         />
-                        <button type="submit">Submit</button>
+                        <button type="submit" onClick={() =< handleEdit(post.id)}>Submit</button>
                     </form>
                 </>
             }           
