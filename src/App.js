@@ -62,16 +62,18 @@ function App() {
       history('/');
     } catch(err) {
       console.log(`Error: ${err.message}`);
-      console.log(err.response.data);
-      console.log(err.response.status);
-      console.log(err.response.headers);
     }
   }
 
-  const handleDelete = (id) => {
-    const postsList = posts.filter(post => post.id !== id);
-    setPosts(postsList);
-    history('/')
+  const handleDelete = async (id) => {
+    try {
+      await api.delete(`./posts/${id}`);
+      const postsList = posts.filter(post => post.id !== id);
+      setPosts(postsList);
+      history('/')
+    } catch (err) {
+      console.log(`Error: ${err.message}`);
+    }
   }
 
   return (
