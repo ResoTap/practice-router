@@ -28,10 +28,20 @@ const EditPost = ({
                             cols="30" 
                             rows="10"
                         />
-                        <button type="submit" onClick={() => handleEdit(post.id)}>Submit</button>
+                        <button type="submit" onClick={() =>  handleEdit(post.id)}>Submit</button>
                     </form>
                 </>
-            }           
+            }    
+            {!editTitle &&
+                <>
+                    <h2>Posst Not Found</h2>
+                    <p>Well, that's disappointing.</p>
+                    <p>
+                        <Link to='/'>Visit Our Hamepage</Link>
+                    </p>
+                </>
+
+            }       
         </main>
     )
 }
