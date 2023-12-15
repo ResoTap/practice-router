@@ -17,6 +17,8 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [postTitle, setPostTitle] = useState('');
   const [postBody, setPostBody] = useState('');
+  const [editTitle, setEditTitle] = useState('');
+  const [editBody, setEditBody] = useState('');
   const history = useNavigate();
 
   useEffect(() => {
@@ -64,6 +66,8 @@ function App() {
       console.log(`Error: ${err.message}`);
     }
   }
+
+  const handleEdit = async 
 
   const handleDelete = async (id) => {
     try {
