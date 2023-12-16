@@ -199,10 +199,9 @@ body {
   font-size: 1rem;
   cursor: pointer;
 }
-
-.Missing h2, .PostPage h2, 
-.Missing p, .PostPage p {
-  margin-bottom: 1rem;
+ 
+.Missing p, .PostPage p, .NewPost p {
+  margin-top: 1rem;
 }
 
 .PostPage button {
