@@ -4,6 +4,7 @@ import Footer from './footer';
 import Home from './home';
 import NewPost from './newPost';
 import PostPage from './postPage';
+import EditPost from './editPost';
 import About from './about';
 import Missing from './missing';
 import { Route, Routes, useNavigate } from 'react-router-dom';
@@ -109,10 +110,10 @@ function App() {
         <Route path='/edit/:id' element={<EditPost
             posts={posts}
             handleEdit={handleEdit}
-            postTitle={editTitle}
-            setPostTitle={setEditTitle}
-            postBody={editBody}
-            setPostBody={setEditBody}
+            editTitle={editTitle}
+            setEditTitle={setEditTitle}
+            editBody={editBody}
+            setEditBody={setEditBody}
           />}
         />
         <Route path='/post/:id' element={<PostPage posts={posts} handleDelete={handleDelete} />} />

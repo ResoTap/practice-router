@@ -4,6 +4,15 @@ import { useParams, Link } from "react-router-dom";
 const EditPost = ({
     posts, handleEdit, editBody, setEditBody, editTitle, setEditTitle
 }) => {
+    const { id } = useParams();
+    const post = posts.find(post => (post.id).toString() === id);
+
+    useEffect(() => {
+        if (post) {
+            setEditTitle(post.title);
+            setEditBody(post.body);
+        }
+    }, [post, setEditTitle, setEditBody])
     return (
         <main className="NewPost">
             {editTitle && 
@@ -28,20 +37,21 @@ const EditPost = ({
                             cols="30" 
                             rows="10"
                         />
-                        <button type="submit" onClick={() =>  handleEdit(post.id)}>Submit</button>
+                        <button type="submit" onClick={() =>  handleEdit(posts.id)}>Submit</button>
                     </form>
                 </>
             }    
             {!editTitle &&
                 <>
-                    <h2>Posst Not Found</h2>
+                    <h2>Post Not Found</h2>
                     <p>Well, that's disappointing.</p>
                     <p>
                         <Link to='/'>Visit Our Hamepage</Link>
                     </p>
                 </>
-
             }       
         </main>
     )
 }
+
+export default EditPost
