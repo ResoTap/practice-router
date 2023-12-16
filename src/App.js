@@ -22,6 +22,7 @@ function App() {
   const [editTitle, setEditTitle] = useState('');
   const [editBody, setEditBody] = useState('');
   const history = useNavigate();
+  const { width } = useWindowSize();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -97,7 +98,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="React JS Blog" />
+      <Header title="React JS Blog" width={width} />
       <Nav search={search} setSearch={setSearch} />
       <Routes>
         <Route path='/' element={<Home posts={searchResults} />} />
