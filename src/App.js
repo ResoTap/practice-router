@@ -71,6 +71,7 @@ function App() {
   const handleEdit = async (id) => {
     const datetime = format(new Date(), 'MMMM dd, yyyy pp');
     const updatedPost = { id, title: editTitle, datetime, body: editBody };
+    console.log(`updatedPost: ${ updatedPost.id, updatedPost.title }`);
     try {
       const response = await api.put(`/posts/${id}`, updatedPost);
       setPosts(posts.map(post => post.id === id ? { ...response.data } : post));
@@ -79,12 +80,13 @@ function App() {
       history('/');
     } catch (err) {
       console.log(`Error: ${err.message}`);
+      console.log(`id: ${id}`);
     }
   }
 
   const handleDelete = async (id) => {
     try {
-      await api.delete(`./posts/${id}`);
+      await api.delete(`/posts/${id}`);
       const postsList = posts.filter(post => post.id !== id);
       setPosts(postsList);
       history('/')

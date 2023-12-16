@@ -38,7 +38,7 @@ const EditPost = ({
                             cols="30" 
                             rows="10"
                         />
-                        <button type="submit" onClick={() => handleEdit(posts.id)}>Submit</button>
+                        <button type="submit" onClick={() => handleEdit(post.id)}>Submit</button>
                     </form>
                 </>
             }    
