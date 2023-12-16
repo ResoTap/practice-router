@@ -12,6 +12,7 @@ import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import api from './api/posts';
 import useWindowSize from './hooks/useWindowSize';
+import useAxiosFetch from './hooks/useAxiosFetch';
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -23,6 +24,8 @@ function App() {
   const [editBody, setEditBody] = useState('');
   const history = useNavigate();
   const { width } = useWindowSize();
+
+  const { data, fetchError, isLoading } = useAxiosFetch('http://localhost:3500/posts');
 
   useEffect(() => {
     const fetchPosts = async () => {
