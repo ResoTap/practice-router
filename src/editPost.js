@@ -13,6 +13,7 @@ const EditPost = ({
             setEditBody(post.body);
         }
     }, [post, setEditTitle, setEditBody])
+
     return (
         <main className="NewPost">
             {editTitle && 
@@ -37,7 +38,7 @@ const EditPost = ({
                             cols="30" 
                             rows="10"
                         />
-                        <button type="submit" onClick={() =>  handleEdit(posts.id)}>Submit</button>
+                        <button type="submit" onClick={() => handleEdit(posts.id)}>Submit</button>
                     </form>
                 </>
             }    
