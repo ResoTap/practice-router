@@ -88,8 +88,8 @@ function App() {
   return (
     <div className="App">
       <DataProvider>
-        <Header title="React JS Blog" width={width} />
-        <Nav search={search} setSearch={setSearch} />
+        <Header title="React JS Blog" />
+        <Nav />
         <Routes>
           <Route path='/' element={<Home
               posts={searchResults}
