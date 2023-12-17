@@ -13,6 +13,7 @@ import { format } from 'date-fns';
 import api from './api/posts';
 import useWindowSize from './hooks/useWindowSize';
 import useAxiosFetch from './hooks/useAxiosFetch';
+import { DataProvider } from './context/dataContext';
 
 function App() {
   const [posts, setPosts] = useState([]);
