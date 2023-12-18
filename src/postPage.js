@@ -1,4 +1,6 @@
 import { useParams, Link } from "react-router-dom"
+import { useContext } from 'react';
+import DataContext from './context/dataContext';
 
 const PostPage = ({ posts, handleDelete }) => {
     const { id } = useParams();
