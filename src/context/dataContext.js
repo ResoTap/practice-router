@@ -94,7 +94,8 @@ export const DataProvider = ({ children }) => {
             editBody, 
             setEditBody, 
             editTitle, 
-            setEditTitle
+            setEditTitle,
+            handleDelete
         }}>
             {children}
         </DataContext.Provider>
