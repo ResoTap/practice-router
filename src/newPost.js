@@ -1,13 +1,16 @@
-import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
-import api from './api/posts'
-import DataContext from './context/dataContext';
+import { useStoreState, useStoreActions, useStore } from "easy-peasy"
 
 const NewPost = () => {
-    const [postTitle, setPostTitle] = useState('');
-    const [postBody, setPostBody] = useState('');
-    const { posts, setPosts } = useContext(DataContext)
+    const posts = useStoreState((state) => state.posts);
+    const postTitle = useStoreState((state) => state.postTitle)
+    const postBody = useStoreState((state) => state.postBody);
+
+    const savePost = useStoreActions((actions) => actions.savePost);
+    const setPostTitle = useStoreActions((actions) => actions.setPostTitle);
+    const setPostBody = useStoreActions((actions) => actions.setPostBody);
+    
     const history = useNavigate();
 
     const handleSubmit = async (e) => {
