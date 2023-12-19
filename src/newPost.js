@@ -1,5 +1,7 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { format } from 'date-fns';
+import api from './api/posts'
 import DataContext from './context/dataContext';
 
 const NewPost = () => {
