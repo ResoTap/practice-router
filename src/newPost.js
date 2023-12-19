@@ -18,18 +18,8 @@ const NewPost = () => {
         const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
         const datetime = format(new Date(), 'MMMM dd, yyyy pp');
         const newPost = { id, title: postTitle, datetime, body: postBody };
-        console.log(newPost);
-        try {
-            const response = await api.post('/posts', newPost);
-            console.log(`response: ${response}`);
-            const allPosts = [...posts, response.data];
-            setPosts(allPosts);
-            setPostTitle('');
-            setPostBody('');
-            history('/');
-            } catch(err) {
-            console.log(`Error: ${err.message}`);
-        }
+        savePost(newPost);
+        history('/');        
     }
 
     return (
