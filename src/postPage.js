@@ -4,12 +4,12 @@ import { useStoreState, useStoreActions } from "easy-peasy"
 const PostPage = () => {
     const history = useNavigate();
     const { id } = useParams();
-    const deletePosts = useStoreActions((actions) => actions.deletePosts);
+    const deletePost = useStoreActions((actions) => actions.deletePost);
     const getPostById = useStoreState((state) => state.getPostById);
     const post = getPostById(id);
 
     const handleDelete = async (id) => {
-        deletePosts(id);
+        deletePost(id);
         history('/');
     }
 
