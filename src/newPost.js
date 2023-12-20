@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
-import { useStoreState, useStoreActions, useStore } from "easy-peasy"
+import { useStoreState, useStoreActions } from "easy-peasy"
 
 const NewPost = () => {
     const posts = useStoreState((state) => state.posts);
