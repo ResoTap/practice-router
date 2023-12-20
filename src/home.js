@@ -2,7 +2,7 @@ import Feed from "./feed"
 import { useStoreState } from "easy-peasy"
 
 const Home = ({ isLoading, fetchError }) => {
-    const { searchResults } = useStoreState((state) => state.searchResults);
+    const searchResults = useStoreState((state) => state.searchResults);
     
     return (
         <main className="Home">
